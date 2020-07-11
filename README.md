@@ -8,14 +8,11 @@ looking to get their feet wet with Zend Framework.
 
 ## Installation using Composer
 
-The easiest way to create a new Zend Framework project is to use
-[Composer](https://getcomposer.org/).  If you don't have it already installed,
-then please install as per the [documentation](https://getcomposer.org/doc/00-intro.md).
 
 To use this applicaton of Zend Framework project:
 
 ```bash
-$ https://github.com/santoshborate/demo-zf3.git
+$ git clone https://github.com/santoshborate/demo-zf3.git
 ```
 
 Then create the MySql database named `zf_assignment` and create the table scemas mentioned in `database.sql`.
