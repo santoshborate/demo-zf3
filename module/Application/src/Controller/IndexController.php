@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace Application\Controller;
 
-use Application\Form\RouterForm;
 use Application\Service\RouterService;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
