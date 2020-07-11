@@ -27,5 +27,6 @@ return [
     'Zend\Form',
     'Zend\Router',
     'Zend\Validator',
+    'Laminas\DeveloperTools',
     'Application',
 ];

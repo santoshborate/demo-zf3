@@ -5,9 +5,8 @@ namespace Application;
 use Application\Hydrator\RouterHydrator;
 use Application\Service\RouterService;
 use Application\Service\RouterServiceFactory;
-use Zend\Router\Http\Literal;
-use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\Router\Http\Literal;
+use Laminas\Router\Http\Segment;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 
 return [
