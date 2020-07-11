@@ -1,0 +1,74 @@
+<h1>Manage Routers</h1>
+
+<p>
+    <a class="btn btn-info" href="
+    <?= $this->url('router', ['action'=>'add']); ?>">
+        Add Router
+    </a>
+
+    Page Size
+    <select id="pageSizeSelector" class="pageSize">
+        <?php
+            $selectorList = [5, 10, 20];
+            foreach ($selectorList as $selector) {
+                $selected = '';
+                if ($selector === (int) $pageSize) {
+                    $selected = 'selected="selected"';
+                }
+                echo '<option value="'. $selector . '" ' . $selected . '>' . $selector . '</option> ';
+            }
+        ?>
+    </select>
+</p>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Sapid</th>
+        <th>Host Name</th>
+        <th>Loopback</th>
+        <th>Macaddress</th>
+        <th>Active</th>
+        <th>Actions</th>
+    </tr>
+    <?php /* @var $router \Application\Entity\Router */?>
+    <?php foreach ($this->routers as $key => $router):
+            $counter = ++$key;
+            $counter += (($page > 1) ? (($page - 1) * $pageSize) : 0);
+        ?>
+        <tr>
+            <td><?=$this->escapeHtml($counter); ?></td>
+            <td><?=$this->escapeHtml($router->getSapid()); ?></td>
+            <td><?=$this->escapeHtml($router->getHostname()); ?></td>
+            <td><?=$this->escapeHtml($router->getLoopback()); ?></td>
+            <td><?=$this->escapeHtml($router->getMacaddress()); ?></td>
+            <td><?=$this->escapeHtml(($router->getArchive() === 0) ? 'Yes' : 'No'); ?></td>
+            <td>
+                <a class="btn btn-info" href="<?= $this->url('router',
+                    ['action'=>'edit', 'id'=>$router->getId()]); ?>">
+                    <span class="glyphicon glyphicon-pencil" ></span> Edit
+                </a>
+                <a class="btn btn-danger" href="<?= $this->url('router',
+                    ['action'=>'delete', 'id'=> $router->getId()]); ?>">
+                    <span class="glyphicon glyphicon-remove"></span> Delete
+                </a>
+            </td>
+        </tr>
+    <?php endforeach;?>
+</table>
+
+<script>
+    var pageSizeSelector = document.getElementById("pageSizeSelector");
+
+    pageSizeSelector.addEventListener("change", function() {
+       var baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+       window.location.href = baseUrl +  '?pageSize=' + pageSizeSelector.value;
+    });
+</script>
+
+
+<?= $this->paginationControl($this->routers,
+    'Sliding',
+    'application/partial/paginator',
+    ['route' => 'router']); ?>
+
