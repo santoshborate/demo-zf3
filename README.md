@@ -1,13 +1,9 @@
-# ZendSkeletonApplication
-
-> ## Repository abandoned 2019-12-31
->
-> This repository has moved to laminas/laminas-skeleton-installer.
+# Router application demo using laminas Package for ZF3 with Doctrine 2 and Pagination
 
 ## Introduction
 
-This is a skeleton application using the Zend Framework MVC layer and module
-systems. This application is meant to be used as a starting place for those
+This is a router application using the Zend Framework MVC layer and module using new packages of Laminas
+systems. 
 looking to get their feet wet with Zend Framework.
 
 ## Installation using Composer
@@ -16,11 +12,13 @@ The easiest way to create a new Zend Framework project is to use
 [Composer](https://getcomposer.org/).  If you don't have it already installed,
 then please install as per the [documentation](https://getcomposer.org/doc/00-intro.md).
 
-To create your new Zend Framework project:
+To use this applicaton of Zend Framework project:
 
 ```bash
-$ composer create-project -sdev zendframework/skeleton-application path/to/install
+$ https://github.com/santoshborate/demo-zf3.git
 ```
+
+Then create the MySql database named `zf_assignment` and create the table scemas mentioned in `database.sql`.
 
 Once installed, you can test it out immediately using PHP's built-in web server:
 
