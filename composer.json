@@ -2,7 +2,7 @@
     "name": "santoshborate/demo-zf3",
     "description": "Router Application for Zend Framework 3 (Laminas) zend-mvc applications",
     "type": "project",
-    "license": "BSD-3-Clause",
+    "license": "proprietary",
     "keywords": [
         "framework",
         "mvc",
