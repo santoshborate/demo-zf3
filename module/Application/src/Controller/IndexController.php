@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Application\Controller;
@@ -20,7 +21,10 @@ class IndexController extends AbstractActionController
         $this->routerService = $routerService;
     }
 
-    public function indexAction()
+    /**
+     * @return ViewModel
+     */
+    public function indexAction(): ViewModel
     {
         return new ViewModel(
             [

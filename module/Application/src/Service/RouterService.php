@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Application\Service;
@@ -62,13 +63,23 @@ class RouterService
         return $this->routerRepository->find($id);
     }
 
-    public function saveRouter(Router $router)
+    /**
+     * @param Router $router
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
+    public function saveRouter(Router $router): void
     {
         $this->entityManager->persist($router);
         $this->entityManager->flush();
     }
 
-    public function deleteRouter(Router $router)
+    /**
+     * @param Router $router
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
+    public function deleteRouter(Router $router): void
     {
         $this->entityManager->remove($router);
         $this->entityManager->flush();
