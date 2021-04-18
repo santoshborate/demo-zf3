@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Application\Form;
@@ -8,15 +9,11 @@ use Laminas\InputFilter\InputFilter;
 
 class RouterForm extends Form
 {
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         // Define form name
         parent::__construct('router-form');
 
-        // Set POST method for this form
         $this->setAttribute('method', 'post');
 
         $this->addElements();
@@ -24,9 +21,9 @@ class RouterForm extends Form
     }
 
     /**
-     * This method adds elements to form (input fields and submit button).
+     * @return void
      */
-    protected function addElements()
+    protected function addElements(): void
     {
         $this->add([
             'type'  => 'hidden',
@@ -39,7 +36,6 @@ class RouterForm extends Form
             ],
         ]);
 
-        // Add "sapid" field
         $this->add([
             'type'  => 'text',
             'name' => 'sapid',
@@ -51,7 +47,6 @@ class RouterForm extends Form
             ],
         ]);
 
-        // Add "hostname" field
         $this->add([
             'type'  => 'text',
             'name' => 'hostname',
@@ -63,7 +58,6 @@ class RouterForm extends Form
             ],
         ]);
 
-        // Add "loopback" field
         $this->add([
             'type'  => 'text',
             'name' => 'loopback',
@@ -75,7 +69,6 @@ class RouterForm extends Form
             ],
         ]);
 
-        // Add "macaddress" field
         $this->add([
             'type'  => 'text',
             'name' => 'macaddress',
@@ -87,7 +80,6 @@ class RouterForm extends Form
             ],
         ]);
 
-        // Add "archive" field
         $this->add([
             'type'  => 'select',
             'name' => 'archive',
@@ -103,7 +95,6 @@ class RouterForm extends Form
             ],
         ]);
 
-        // Add the submit button
         $this->add([
             'type'  => 'submit',
             'name' => 'submit',
@@ -115,11 +106,10 @@ class RouterForm extends Form
     }
 
     /**
-     * This method creates input filter (used for form filtering/validation).
+     * @return void
      */
-    private function addInputFilter()
+    private function addInputFilter(): void
     {
-
         $inputFilter = new InputFilter();
         $this->setInputFilter($inputFilter);
 
