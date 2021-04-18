@@ -1,4 +1,13 @@
 <?php
+
+declare(strict_types=1);
+
+$env = getenv('APPLICATION_ENV') ?: 'dev';
+if ($env === 'dev') {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 'on');
+}
+
 /**
  * If you need an environment-specific system or application configuration,
  * there is an example in the documentation
@@ -20,6 +29,7 @@ return [
         // provided by modules themselves. Paths may use GLOB_BRACE notation.
         'config_glob_paths' => [
             realpath(__DIR__) . '/autoload/{{,*.}global,{,*.}local}.php',
+            __DIR__ . "/{$env}/{,*.}{global,local}.php",
         ],
 
         // Whether or not to enable a configuration cache.

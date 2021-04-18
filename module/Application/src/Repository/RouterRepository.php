@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Application\Repository;
@@ -16,8 +17,6 @@ class RouterRepository extends EntityRepository
         $queryBuilder = $this->createQueryBuilder('r');
         $queryBuilder->select()
             ->orderBy('r.id', 'DESC');
-
-        // $queryBuilder->where('r.archive = 0');
 
         return $queryBuilder->getQuery();
     }
